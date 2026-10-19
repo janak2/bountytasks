@@ -2,6 +2,7 @@ services:
   aimg-server:
     container_name: aimg-server
     build:
+      network: host
       context: ../../../
       dockerfile: bounties/bounty_0/setup_files/Dockerfile
     ports:

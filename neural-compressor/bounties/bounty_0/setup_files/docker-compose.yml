@@ -2,6 +2,7 @@ services:
   neural_compressor:
     container_name: neural-compressor
     build: 
+      network: host
       context: ../../../
       dockerfile: ./bounties/bounty_0/setup_files/Dockerfile
     volumes:

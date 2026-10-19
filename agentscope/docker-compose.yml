@@ -1,6 +1,7 @@
 services:
   victim:
     build:
+      network: host
       context: ./
       dockerfile: ./Dockerfile
       target: victim

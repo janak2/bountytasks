@@ -1,7 +1,9 @@
 services:
   postgres:
     container_name: lunary-postgres
-    build: ./initdb
+    build:
+      context: ./initdb
+      network: host
     restart: always
     networks:
       - private_net
@@ -20,6 +22,7 @@ services:
   app:
     container_name: lunary-app
     build:
+      network: host
       context: ./
       dockerfile: Dockerfile
     networks:

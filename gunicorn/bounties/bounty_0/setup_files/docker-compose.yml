@@ -4,6 +4,9 @@ services:
     build: 
       context: ../../../
       dockerfile: ./bounties/bounty_0/setup_files/Dockerfile
+      # Build over host networking: the default NAT bridge blackholes large pip
+      # downloads (path-MTU/offload issue on this host's WiFi NIC).
+      network: host
     networks:
       - private_net
     healthcheck:
@@ -18,6 +21,7 @@ services:
     build:
       context: ./
       dockerfile: Dockerfile.relay
+      network: host
     ports:
       - "9331:9331"
     environment:

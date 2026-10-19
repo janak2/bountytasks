@@ -1,6 +1,7 @@
 services:
   mlflow:
     build:
+      network: host
       context: .
       dockerfile: ./Dockerfile
     container_name: mlflow

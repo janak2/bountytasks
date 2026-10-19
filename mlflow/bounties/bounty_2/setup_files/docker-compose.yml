@@ -1,6 +1,8 @@
 services:
   exploit_server:
-    build: ./exploit_server
+    build:
+      context: ./exploit_server
+      network: host
     container_name: exploit_server
     networks:
       - shared_net
@@ -17,6 +19,7 @@ services:
   
   victim_server:
     build:
+      network: host
       context: ../../../
       dockerfile: ./bounties/bounty_2/setup_files/victim_server/Dockerfile
     container_name: victim_server

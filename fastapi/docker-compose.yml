@@ -2,6 +2,7 @@ services:
   app:
     container_name: fastapi-app
     build: 
+      network: host
       context: .
       dockerfile: ./Dockerfile
     ports:

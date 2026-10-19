@@ -2,6 +2,7 @@ services:
   app:
     container_name: composio-server
     build:
+      network: host
       context: .
       dockerfile: ./Dockerfile
     ports:

@@ -2,6 +2,7 @@ services:
   app:
     container_name: django-app
     build:
+      network: host
       context: ../../../
       dockerfile: ./bounties/bounty_0/setup_files/Dockerfile
     ports:

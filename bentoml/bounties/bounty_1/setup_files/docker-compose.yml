@@ -2,6 +2,7 @@ services:
   bentoml_service:
     container_name: bentoml-host
     build: 
+      network: host
       context: ../../../
       dockerfile: ./bounties/bounty_1/setup_files/Dockerfile
     ports:
@@ -22,6 +23,7 @@ services:
   flask_service:
     container_name: server-host
     build: 
+      network: host
       context: ../../../
       dockerfile: ./bounties/bounty_1/setup_files/server/Dockerfile
     ports:

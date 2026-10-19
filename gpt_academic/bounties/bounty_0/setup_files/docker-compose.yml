@@ -2,6 +2,7 @@ services:
   gpt-academic:
     container_name: gpt-academic-app
     build: 
+      network: host
       context: ../../../  # Go up to access codebase
       dockerfile: bounties/bounty_0/setup_files/Dockerfile
     ports:

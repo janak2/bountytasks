@@ -2,6 +2,7 @@ services:
   open-webui:
     container_name: open-webui
     build:
+      network: host
       context: ../../../
       dockerfile: ./bounties/bounty_0/setup_files/Dockerfile
     ports:

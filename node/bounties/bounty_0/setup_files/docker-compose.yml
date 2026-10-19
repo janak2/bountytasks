@@ -3,6 +3,7 @@ services:
     container_name: node-app
     platform: linux/amd64
     build:
+      network: host
       context: ./
       dockerfile: Dockerfile
     networks:
